@@ -41,11 +41,34 @@ class Radcheck extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'username' => 'Username',
             'attribute' => 'Attribute',
-            'op' => 'Op',
-            'value' => 'Value',
+            'id'        => 'ID',
+            'op'        => 'Op',
+            'username'  => 'Username',
+            'value'     => 'Value',
         ];
+    }
+
+    /* convert the datetime<->timestamp between saving and displaying */
+
+    public function beforeSave($insert)
+    {
+        // convert datetime to timestamp for MDL, but only for 'Expiration' attrib.
+        if ($this->getAttribute('attribute') == 'Expiration') {
+
+            $this->setAttribute('value', strtotime($this->getAttribute('value')) );
+        }
+
+        return $this;
+    }
+
+    public function afterFind()
+    {
+        // convert timestamp to datetime for CNTL/VW, but only for 'Expiration' attrib.
+        if ($this->getAttribute('attribute') == 'Expiration') {
+            $this->setAttribute('value', date('Y-m-d H:i:s', $this->getAttribute('value')));
+        }
+
+        return $this;
     }
 }
