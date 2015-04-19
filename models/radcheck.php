@@ -13,7 +13,7 @@ use Yii;
  * @property string $op
  * @property string $value
  */
-class radcheck extends \yii\db\ActiveRecord
+class Radcheck extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc

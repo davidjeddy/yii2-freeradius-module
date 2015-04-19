@@ -2,7 +2,7 @@
 
 namespace backend\modules\FreeRadius;
 
-class Module extends \yii\base\Module
+class FreeRadius extends \yii\base\Module
 {
     public $controllerNamespace = 'backend\modules\FreeRadius\controllers';
 
