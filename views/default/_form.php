@@ -12,11 +12,11 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'username')->textInput(['maxlength' => 32]) ?>
+    <?= $form->field($model, 'username')->textInput(['maxlength' => 32, 'disabled' => true]) ?>
 
-    <?= $form->field($model, 'attribute')->textInput(['maxlength' => 32]) ?>
+    <?= $form->field($model, 'attribute')->textInput(['maxlength' => 32, 'disabled' => true]) ?>
 
-    <?= $form->field($model, 'op')->textInput(['maxlength' => 2]) ?>
+    <?= $form->field($model, 'op')->hiddenInput(['maxlength' => 2])->label(false) ?>
 
     <?= $form->field($model, 'value')->textInput(['maxlength' => 32]) ?>
 
