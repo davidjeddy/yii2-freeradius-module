@@ -43,10 +43,21 @@ class Radcheck extends \yii\db\ActiveRecord
         return [
             'attribute' => 'Attribute',
             'id'        => 'ID',
-            'op'        => 'Op',
-            'username'  => 'Username',
+            'op'        => 'Operation',
+            'username'  => 'Primary Email',
             'value'     => 'Value',
         ];
+    }
+
+    /* Associate the FreeRadius Module to the 'stock' *
+    /* Yii2 user TBO via FR.radcheck.usernam<->Yii.user.id  */
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUser()
+    {
+        return $this->hasOne(UserDetails::className(), ['username' => 'id']);
     }
 
     /* convert the datetime<->timestamp between saving and displaying */
@@ -55,7 +66,6 @@ class Radcheck extends \yii\db\ActiveRecord
     {
         // convert datetime to timestamp for MDL, but only for 'Expiration' attrib.
         if ($this->getAttribute('attribute') == 'Expiration') {
-
             $this->setAttribute('value', strtotime($this->getAttribute('value')) );
         }
 
