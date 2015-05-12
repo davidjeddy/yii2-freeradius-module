@@ -3,11 +3,15 @@
 namespace backend\modules\FreeRadius\controllers;
 
 use Yii;
-use backend\modules\FreeRadius\models\radcheck;
 use yii\data\ActiveDataProvider;
+use yii\filters\AccessControl;
+use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
+
+use backend\modules\FreeRadius\models\radcheck;
+
+use common\models\UserDetails;
 
 /**
  * DefaultController implements the CRUD actions for radcheck model.
