@@ -1,4 +1,4 @@
-# yii2-radius-module
+# yii2-freeradius-module
 
 Module to interface with a FreeRADIUS server
 
