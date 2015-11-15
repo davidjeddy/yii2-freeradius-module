@@ -11,8 +11,6 @@ use yii\web\NotFoundHttpException;
 
 use backend\modules\FreeRadius\models\radcheck;
 
-use common\models\UserDetails;
-
 /**
  * DefaultController implements the CRUD actions for radcheck model.
  */

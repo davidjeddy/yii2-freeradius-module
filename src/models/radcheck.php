@@ -49,17 +49,6 @@ class Radcheck extends \yii\db\ActiveRecord
         ];
     }
 
-    /* Associate the FreeRadius Module to the 'stock' *
-    /* Yii2 user TBO via FR.radcheck.usernam<->Yii.user.id  */
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getUser()
-    {
-        return $this->hasOne(UserDetails::className(), ['username' => 'id']);
-    }
-
     /* convert the datetime<->timestamp between saving and displaying */
 
     public function beforeSave($insert)
