@@ -4,7 +4,8 @@ namespace davidjeddy\freeradius;
 
 class Module extends \yii\base\Module
 {
-    public $controllerNamespace = 'backend\modules\FreeRadius\controllers';
+    public $controllerNamespace = 'davidjeddy\freeradius\controllers';
+    public $defaultRoute        = 'default/index';
 
     public function init()
     {
