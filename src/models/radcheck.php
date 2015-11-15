@@ -70,4 +70,26 @@ class RadCheck extends \yii\db\ActiveRecord
 
         return $this;
     }
+
+    /* custom methods */
+
+    /**
+     * @todo  Better way of doing the 'LIKE' logic? - DJE - 2015-11-15
+     * @since  2015-11-15 [<description>]
+     * @param  [type] $username [description]
+     * @return [type]           [description]
+     */
+    public static function getExpiration($username)
+    {
+        return date(
+            'Y-m-d H:i:s',
+            self::find()
+                ->select('value')
+                ->andWhere('username like "'.$username.'%"')
+                ->andWhere(['attribute' => 'expiration'])
+                ->orderBy('value ASC')
+                ->one()
+                ->value
+        );
+    }
 }
