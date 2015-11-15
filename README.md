@@ -28,4 +28,3 @@ Recommended way is with Composer.
 
 # USAGE
 
-
