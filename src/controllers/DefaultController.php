@@ -1,6 +1,6 @@
 <?php
 
-namespace backend\modules\FreeRadius\controllers;
+namespace davidjeddy\freeradius\controllers;
 
 use Yii;
 use yii\data\ActiveDataProvider;
@@ -9,7 +9,7 @@ use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 
-use backend\modules\FreeRadius\models\radcheck;
+use davidjeddy\freeradius\models\radcheck;
 
 /**
  * DefaultController implements the CRUD actions for radcheck model.

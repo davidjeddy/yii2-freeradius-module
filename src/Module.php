@@ -1,8 +1,8 @@
 <?php
 
-namespace backend\modules\FreeRadius;
+namespace davidjeddy\freeradius;
 
-class FreeRadius extends \yii\base\Module
+class Module extends \yii\base\Module
 {
     public $controllerNamespace = 'backend\modules\FreeRadius\controllers';
 

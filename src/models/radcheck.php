@@ -1,6 +1,6 @@
 <?php
 
-namespace backend\modules\FreeRadius\models;
+namespace davidjeddy\freeradius\models;
 
 use Yii;
 
