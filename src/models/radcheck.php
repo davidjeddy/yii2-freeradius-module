@@ -13,14 +13,14 @@ use Yii;
  * @property string $op
  * @property string $value
  */
-class Radcheck extends \yii\db\ActiveRecord
+class RadCheck extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return 'radcheck';
+        return '{{%radcheck}}';
     }
 
     /**

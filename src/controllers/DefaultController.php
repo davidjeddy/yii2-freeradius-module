@@ -9,10 +9,10 @@ use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 
-use davidjeddy\freeradius\models\radcheck;
+use davidjeddy\freeradius\models\RadCheck;
 
 /**
- * DefaultController implements the CRUD actions for radcheck model.
+ * DefaultController implements the CRUD actions for RadCheck model.
  */
 class DefaultController extends Controller
 {
@@ -29,13 +29,13 @@ class DefaultController extends Controller
     }
 
     /**
-     * Lists all radcheck models.
+     * Lists all RadCheck models.
      * @return mixed
      */
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => radcheck::find()->where(['Attribute' => 'Expiration']),
+            'query' => RadCheck::find()->where(['Attribute' => 'Expiration']),
         ]);
 
         return $this->render('index', [
@@ -44,7 +44,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * Displays a single radcheck model.
+     * Displays a single RadCheck model.
      * @param integer $id
      * @return mixed
      */
@@ -56,13 +56,13 @@ class DefaultController extends Controller
     }
 
     /**
-     * Creates a new radcheck model.
+     * Creates a new RadCheck model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new radcheck();
+        $model = new RadCheck();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -74,7 +74,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * Updates an existing radcheck model.
+     * Updates an existing RadCheck model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -93,7 +93,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * Deletes an existing radcheck model.
+     * Deletes an existing RadCheck model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -106,15 +106,15 @@ class DefaultController extends Controller
     }
 
     /**
-     * Finds the radcheck model based on its primary key value.
+     * Finds the RadCheck model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return radcheck the loaded model
+     * @return RadCheck the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = radcheck::findOne($id)) !== null) {
+        if (($model = RadCheck::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
