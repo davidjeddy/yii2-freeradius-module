@@ -74,22 +74,56 @@ class RadCheck extends \yii\db\ActiveRecord
     /* custom methods */
 
     /**
-     * @todo  Better way of doing the 'LIKE' logic? - DJE - 2015-11-15
+     * [getExpiration description]
+     * 
+     * @author David J Eddy
+     * @todo   Better way of doing the 'LIKE' logic? - DJE - 2015-11-15
      * @since  2015-11-15 [<description>]
-     * @param  [type] $username [description]
-     * @return [type]           [description]
+     * @param  string $username
+     * @return mixed
      */
-    public static function getExpiration($username)
+    private static function getExpiration($username, $field = 'expiration', $orderDir = 'DESC')
     {
-        return date(
-            'Y-m-d H:i:s',
-            self::find()
-                ->select('value')
-                ->andWhere('username like "'.$username.'%"')
-                ->andWhere(['attribute' => 'expiration'])
-                ->orderBy('value ASC')
-                ->one()
-                ->value
-        );
+        $returnData = self::find()
+            ->select('value')
+            ->andWhere('username like "'.$username.'%"')
+            ->andWhere(['attribute' => $field])
+            ->orderBy('value '.$orderDir)
+            ->one();
+
+        return (isset($returnData->value) ? $returnData->value : false);
+    }
+
+    /**
+     * [getHumanReadableExpiration description]
+     *
+     * @author David J Eddy
+     * @since  2015-11-16
+     * @param  string $username [description]
+     * @return string
+     */
+    public static function getHumanReadableExpiration($username, $format = 'Y-m-d H:i:s')
+    {
+        $returnData = self::getExpiration($username);
+
+        // is the expiration() return > the timestamp of now
+        if ($returnData > time()) {
+            $nowDT      = new \DateTime();
+            $intervalDT = $nowDT->diff( new \DateTime(date($format, $returnData)) );
+
+            $dayDiff  = $intervalDT->format('%a');
+            $hourDiff = $intervalDT->format('%h');
+
+            if ($dayDiff) {
+                return 'Expires in '.$dayDiff.' day'.($dayDiff < 1 ?: 's').' on '.date('F t, Y', $returnData); 
+            } elseif ($hourDiff) {
+                return 'Expires in '.$hourDiff.' hour'.($hourDiff < 1 ?: 's');
+            }
+
+        } else {
+            return  'EXPIRED';
+        }
+
+        return false;
     }
 }
