@@ -30,9 +30,10 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'label' => 'attribute',
                 'value' => function ($model, $key, $value, $widget) {
-                    if ($model->value == 'expiration' &&is_numeric($model->value)) {
+                    if ($model->attribute == 'expiration' && is_numeric($model->value)) {
                         // expiration
-                        return date($model->value);
+                        // Jan 1, 1970, 12:00:00 AM
+                        return date('M. d, Y, H:m:i A', $model->value);
                     } elseif (strstr($model->attribute, 'clear-password') ) {
                         // clear password
                         return $model->value;
