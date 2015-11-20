@@ -25,8 +25,28 @@ $this->params['breadcrumbs'][] = $this->title;
             //'id',
             'username',
             'attribute',
-            //'op',
-            'value:datetime',
+            'op',
+            // 'value:datetime',
+            [
+                'label' => 'attribute',
+                'value' => function ($model, $key, $value, $widget) {
+                    if ($model->value == 'expiration' &&is_numeric($model->value)) {
+                        // expiration
+                        return date($model->value);
+                    } elseif (strstr($model->attribute, 'clear-password') ) {
+                        // clear password
+                        return $model->value;
+                    } elseif (strstr($model->attribute, 'password') ) {
+                        // other password
+                        return false;
+                    } else {
+                        // other data
+                        return $model->value;
+                    }
+
+                    return false;
+                }
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

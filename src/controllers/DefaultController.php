@@ -35,7 +35,7 @@ class DefaultController extends Controller
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => RadCheck::find()->where(['Attribute' => 'Expiration']),
+            'query' => RadCheck::find(),
         ]);
 
         return $this->render('index', [
