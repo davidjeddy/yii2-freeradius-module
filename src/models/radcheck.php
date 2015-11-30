@@ -115,7 +115,7 @@ class RadCheck extends \yii\db\ActiveRecord
             $hourDiff = $intervalDT->format('%h');
 
             if ($dayDiff) {
-                return 'Expires in '.$dayDiff.' day'.($dayDiff < 1 ?: 's').' on '.date('F t, Y', $returnData); 
+                return 'Expires in '.$dayDiff.' day'.($dayDiff < 1 ?: 's').' on '.date('F d, Y', $returnData); 
             } elseif ($hourDiff) {
                 return 'Expires in '.$hourDiff.' hour'.($hourDiff < 1 ?: 's');
             }
