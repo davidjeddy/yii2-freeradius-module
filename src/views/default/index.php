@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'value:datetime',
             [
                 'label' => 'attribute',
-                'value' => function ($model, $key, $value, $widget) {
+                'value' => function (object $model, $key, $value, $widget) {
                     if ($model->attribute == 'expiration' && is_numeric($model->value)) {
                         // expiration
                         // Jan 1, 1970, 12:00:00 AM

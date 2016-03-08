@@ -44,3 +44,4 @@ class m151114_000000_free_radius_install extends Migration
         return $command->execute();
     }
 }
+

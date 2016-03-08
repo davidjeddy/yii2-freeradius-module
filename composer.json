@@ -41,6 +41,5 @@
         "issues": "https://github.com/davidjeddy/yii2-freeradius-module/issues?state=open",
         "source": "https://github.com/davidjeddy/yii2-freeradius-module/issues"
     },
-    "type": "module",
-    "version": "0.0.5"
+    "type": "module"
 }
