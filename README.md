@@ -45,3 +45,4 @@ return [
 
 IF the server does not yet had a radcheck table from FreeRadius, run this from the project root:
 `./yii migrate/up --migrationPath=./vendor/davidjeddy/yii2-freeradius-module/migration/`
+

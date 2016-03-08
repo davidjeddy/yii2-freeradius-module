@@ -77,7 +77,6 @@ class RadCheck extends \yii\db\ActiveRecord
      * [getExpiration description]
      * 
      * @author David J Eddy
-     * @todo   Better way of doing the 'LIKE' logic? - DJE - 2015-11-15
      * @since  2015-11-15 [<description>]
      * @param  string $username
      * @return mixed
