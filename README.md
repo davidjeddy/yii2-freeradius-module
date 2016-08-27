@@ -1,13 +1,19 @@
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/0137c455-b0f7-482b-982e-182521bc2a11/big.png)](https://insight.sensiolabs.com/projects/0137c455-b0f7-482b-982e-182521bc2a11)
-
 # yii2-freeradius-module
 
 Module to interface with a FreeRADIUS server
 
 
 # Badges
+[![Latest Stable Version](https://poser.pugx.org/davidjeddy/yii2-freeradius-module/v/stable?format=flat-square)](https://packagist.org/packages/davidjeddy/yii2-freeradius-module)
+[![Total Downloads](https://poser.pugx.org/davidjeddy/yii2-freeradius-module/downloads)](https://packagist.org/packages/davidjeddy/yii2-freeradius-module)
+[![Latest Unstable Version](https://poser.pugx.org/davidjeddy/yii2-freeradius-module/v/unstable?format=flat-square)](https://packagist.org/packages/davidjeddy/yii2-freeradius-module)
+[![License](https://poser.pugx.org/davidjeddy/yii2-freeradius-module/license?format=flat-square)](https://packagist.org/packages/davidjeddy/yii2-freeradius-module)
+[![Monthly Downloads](https://poser.pugx.org/davidjeddy/yii2-freeradius-module/d/monthly?format=flat-square)](https://packagist.org/packages/davidjeddy/yii2-freeradius-module)
+[![Daily Downloads](https://poser.pugx.org/davidjeddy/yii2-freeradius-module/d/daily?format=flat-square)](https://packagist.org/packages/davidjeddy/yii2-freeradius-module)
+[![composer.lock](https://poser.pugx.org/davidjeddy/yii2-freeradius-module/composerlock?format=flat-square)](https://packagist.org/packages/davidjeddy/yii2-freeradius-module)
 
 
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/0137c455-b0f7-482b-982e-182521bc2a11/big.png)](https://insight.sensiolabs.com/projects/0137c455-b0f7-482b-982e-182521bc2a11)
 # REQUIREMENTS
 
 MySQL 5.5+
