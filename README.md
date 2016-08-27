@@ -14,11 +14,15 @@ Module to interface with a FreeRADIUS server
 
 
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/0137c455-b0f7-482b-982e-182521bc2a11/big.png)](https://insight.sensiolabs.com/projects/0137c455-b0f7-482b-982e-182521bc2a11)
+
 # REQUIREMENTS
 
 MySQL 5.5+
+
 FreeRadius
+
 Composer
+
 Yii 2+
 
 
