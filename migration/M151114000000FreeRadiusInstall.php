@@ -2,7 +2,7 @@
 
 use yii\db\Migration;
 
-class m151114000000FreeRadiusInstall extends Migration
+class M151114000000FreeRadiusInstall extends Migration
 {
     /**
      * [safeUp description]
