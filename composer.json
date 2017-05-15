@@ -4,9 +4,14 @@
       "name": "David J Eddy",
       "email": "me@davidjeddy.com",
       "homepage": "https://github.com/davidjeddy/yii2-freeradius-module",
-      "role": "Developer"
+      "role": "Maintainer"
     }
   ],
+  "autoload": {
+    "psr-4": {
+      "davidjeddy\\freeradius\\": "./src"
+    }
+  },
   "description": "Module to interface with a FreeRADIUS server.",
   "keywords": [
     "yii2",
@@ -16,11 +21,6 @@
   ],
   "license": "BSD-3-Clause",
   "name": "davidjeddy/yii2-freeradius-module",
-  "autoload": {
-    "psr-4": {
-      "davidjeddy\\freeradius\\": "/src"
-    }
-  },
   "require": {
     "php": "^7",
     "yiisoft/yii2": "^2.0.10"
@@ -40,5 +40,5 @@
     "issues": "https://github.com/davidjeddy/yii2-freeradius-module/issues?state=open",
     "source": "https://github.com/davidjeddy/yii2-freeradius-module/issues"
   },
-  "type": "library"
+  "type": "module"
 }
