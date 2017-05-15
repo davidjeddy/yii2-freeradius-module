@@ -51,6 +51,18 @@ return [
 
 ```
 
+To add to a typical AdminLTE admin panel:
+
+Edit ./backend/views/layouts/common.php and add the following inside `Menu::widget([ ... ])`
+```
+    [
+        'label'     => Yii::t('backend', 'Free Radius'),
+        'icon'      => '<i class="fa fa-id-card-o"></i>',
+        'url'       => ['/free-radius/default/index'],
+        'visible'   => Yii::$app->user->can('administrator')
+    ],
+```
+
 # TESTING
 
 TODO
