@@ -14,8 +14,8 @@ class M151114000000FreeRadiusInstall extends Migration
 
         $connection = Yii::$app->getDb();
         $command = $connection->createCommand("
-            DROP TABLE IF EXISTS `radcheck`;
-            CREATE TABLE `radcheck` (
+            DROP TABLE IF EXISTS `RadCheck`;
+            CREATE TABLE `RadCheck` (
                 `id` int(11) NOT NULL AUTO_INCREMENT,
                 `username` varchar(32) NOT NULL,
                 `attribute` varchar(32) NOT NULL,
@@ -38,7 +38,7 @@ class M151114000000FreeRadiusInstall extends Migration
 
         $connection = Yii::$app->getDb();
         $command = $connection->createCommand("
-            DROP TABLE IF EXISTS `radcheck`;
+            DROP TABLE IF EXISTS `RadCheck`;
         ");
 
         return $command->execute();

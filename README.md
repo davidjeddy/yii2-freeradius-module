@@ -25,8 +25,7 @@ FreeRadius
 
 Composer
 
-Yii 2+
-
+Yii 2+ (advanced tempplate recommended)
 
 # INSTALLATION
 
@@ -44,7 +43,7 @@ return [
     'modules' => [
         ...
         'free-radius' => [
-            'class' => 'davidjeddy\freeradius\Module',
+            'class' => davidjeddy\freeradius\Module::class,
         ],
         ...
     ],
@@ -61,5 +60,5 @@ If the server does not yet have a `RadCheck` table from FreeRadius, run
 
 the modules migration from the project root:
 
-`./yii migrate/up --migrationPath=./vendor/davidjeddy/yii2-freeradius-module/migration/`
+`php ./console/yii migrate/up --migrationPath=./vendor/davidjeddy/yii2-freeradius-module/migration/`
 
