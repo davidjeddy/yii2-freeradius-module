@@ -29,9 +29,10 @@ class DefaultController extends Controller
 
     /**
      * Lists all RadCheck models.
-     * @return mixed
+     *
+     * @return string
      */
-    public function actionIndex()
+    public function actionIndex() : string
     {
         $dataProvider = new ActiveDataProvider([
             'query' => RadCheck::find(),
@@ -43,11 +44,12 @@ class DefaultController extends Controller
     }
 
     /**
-     * Displays a single RadCheck model.
+     * Displays RadCheck model.
+     *
      * @param integer $id
-     * @return mixed
+     * @return string
      */
-    public function actionView($id)
+    public function actionView(integer $id) : string
     {
         return $this->render('view', [
             'model' => $this->findModel($id),
@@ -57,9 +59,10 @@ class DefaultController extends Controller
     /**
      * Creates a new RadCheck model.
      * If creation is successful, the browser will be redirected to the 'view' page.
+     *
      * @return mixed
      */
-    public function actionCreate()
+    public function actionCreate() : \davidjeddy\freeradius\models\RadCheck
     {
         $model = new RadCheck();
 
@@ -75,10 +78,11 @@ class DefaultController extends Controller
     /**
      * Updates an existing RadCheck model.
      * If update is successful, the browser will be redirected to the 'view' page.
+     *
      * @param integer $id
      * @return mixed
      */
-    public function actionUpdate($id)
+    public function actionUpdate(integer $id) : \davidjeddy\freeradius\models\RadCheck
     {
         $model = $this->findModel($id);
 
@@ -94,10 +98,11 @@ class DefaultController extends Controller
     /**
      * Deletes an existing RadCheck model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
+     *
      * @param integer $id
      * @return mixed
      */
-    public function actionDelete($id)
+    public function actionDelete(integer $id)
     {
         $this->findModel($id)->delete();
 
@@ -107,11 +112,12 @@ class DefaultController extends Controller
     /**
      * Finds the RadCheck model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
+     *
      * @param integer $id
      * @return RadCheck the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($id)
+    protected function findModel(integer $id)
     {
         if (($model = RadCheck::findOne($id)) !== null) {
             return $model;
