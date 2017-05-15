@@ -7,7 +7,7 @@
       "role": "Developer"
     }
   ],
-  "description": "Module to interface with a FreeRADIUS server",
+  "description": "Module to interface with a FreeRADIUS server.",
   "keywords": [
     "yii2",
     "framework",
@@ -22,7 +22,7 @@
     }
   },
   "require": {
-    "php": ">=5.5",
+    "php": "^7",
     "yiisoft/yii2": "^2.0.10"
   },
   "require-dev": {

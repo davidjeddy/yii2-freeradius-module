@@ -17,6 +17,8 @@ Module to interface with a FreeRADIUS server
 
 # REQUIREMENTS
 
+PHP 7+
+
 MySQL 5.5+
 
 FreeRadius
@@ -30,13 +32,7 @@ Yii 2+
 
  + `cd {project root}`
  + Run `composer require davidjeddy/yii2-freeradius-module` in terminal
- + OR add `"davidjeddy/yii2-freeradius-module": "dev-master@dev"` to your project's  `composer.json`, then `composer install`.
- + Enbable the module in your apps config/web.config module list
-
-
-# TESTING
-
-Needed
+     + OR add `"davidjeddy/yii2-freeradius-module": "dev-master@dev"` to your project's  `composer.json`, then `composer install`.
 
 # USAGE
 
@@ -52,9 +48,18 @@ return [
         ],
         ...
     ],
-...    
+];
+
 ```
 
-IF the server does not yet have a `radcheck` table from FreeRadius, run the modules migration from the project root:
+# TESTING
+
+TODO
+
+# Misc
+If the server does not yet have a `RadCheck` table from FreeRadius, run
+
+the modules migration from the project root:
+
 `./yii migrate/up --migrationPath=./vendor/davidjeddy/yii2-freeradius-module/migration/`
 
