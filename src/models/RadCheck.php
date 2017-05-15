@@ -51,7 +51,12 @@ class RadCheck extends \yii\db\ActiveRecord
 
     /* convert the datetime<->timestamp between saving and displaying */
 
-    public function beforeSave($insert)
+    /**
+     * @param bool $insert
+     *
+     * @return $this
+     */
+    public function beforeSave(boolean $insert)
     {
         // convert datetime to timestamp for MDL, but only for 'Expiration' attrib.
         if ($this->getAttribute('attribute') == 'Expiration') {
@@ -61,6 +66,9 @@ class RadCheck extends \yii\db\ActiveRecord
         return $this;
     }
 
+    /**
+     * @return $this
+     */
     public function afterFind()
     {
         // convert timestamp to datetime for CNTL/VW, but only for 'Expiration' attrib.
@@ -74,34 +82,29 @@ class RadCheck extends \yii\db\ActiveRecord
     /* custom methods */
 
     /**
-     * [getExpiration description]
-     * 
-     * @author David J Eddy
-     * @since  2015-11-15 [<description>]
-     * @param  string $username
-     * @return mixed
+     * @param string $username
+     * @param string $field
+     * @param string $orderDir
+     *
+     * @return array|null|\yii\db\ActiveRecord
      */
-    private static function getExpiration($username, $field = 'expiration', $orderDir = 'DESC')
+    private static function getExpiration(string $username, string $field = 'expiration', string $orderDir = 'DESC')
     {
-        $returnData = self::find()
+        return self::find()
             ->select('value')
             ->andWhere('username like "'.$username.'%"')
             ->andWhere(['attribute' => $field])
             ->orderBy('value '.$orderDir)
             ->one();
-
-        return (isset($returnData->value) ? $returnData->value : false);
     }
 
     /**
-     * [getHumanReadableExpiration description]
+     * @param string $username
+     * @param string $format
      *
-     * @author David J Eddy
-     * @since  2015-11-16
-     * @param  string $username [description]
      * @return string
      */
-    public static function getHumanReadableExpiration($username, $format = 'Y-m-d H:i:s')
+    public static function getHumanReadableExpiration(string $username, string $format = 'Y-m-d H:i:s')
     {
         $returnData = self::getExpiration($username);
 
@@ -114,15 +117,13 @@ class RadCheck extends \yii\db\ActiveRecord
             $hourDiff = $intervalDT->format('%h');
 
             if ($dayDiff) {
-                return 'Expires in '.$dayDiff.' day'.($dayDiff < 1 ?: 's').' on '.date('F d, Y', $returnData); 
+                return 'Expires in '.$dayDiff.' day'.($dayDiff < 1 ?: 's').' on '.date('F d, Y', $returnData);
             } elseif ($hourDiff) {
                 return 'Expires in '.$hourDiff.' hour'.($hourDiff < 1 ?: 's');
             }
 
-        } else {
-            return  'EXPIRED';
-        }
+        };
 
-        return false;
+        return  'EXPIRED';
     }
 }
