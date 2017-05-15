@@ -46,10 +46,11 @@ class DefaultController extends Controller
     /**
      * Displays RadCheck model.
      *
-     * @param integer $id
+     * @param string $id
+     *
      * @return string
      */
-    public function actionView(integer $id) : string
+    public function actionView(string $id) : string
     {
         return $this->render('view', [
             'model' => $this->findModel($id),
@@ -62,7 +63,7 @@ class DefaultController extends Controller
      *
      * @return mixed
      */
-    public function actionCreate() : \davidjeddy\freeradius\models\RadCheck
+    public function actionCreate()
     {
         $model = new RadCheck();
 
@@ -99,10 +100,11 @@ class DefaultController extends Controller
      * Deletes an existing RadCheck model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      *
-     * @param integer $id
-     * @return mixed
+     * @param strnig $id
+     *
+     * @return \yii\web\Response
      */
-    public function actionDelete(integer $id)
+    public function actionDelete(string $id)
     {
         $this->findModel($id)->delete();
 
@@ -113,11 +115,12 @@ class DefaultController extends Controller
      * Finds the RadCheck model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      *
-     * @param integer $id
-     * @return RadCheck the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
+     * @param string $id
+     *
+     * @return static
+     * @throws NotFoundHttpException
      */
-    protected function findModel(integer $id)
+    protected function findModel(string $id)
     {
         if (($model = RadCheck::findOne($id)) !== null) {
             return $model;

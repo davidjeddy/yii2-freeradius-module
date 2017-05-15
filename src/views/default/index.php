@@ -20,16 +20,16 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php echo GridView::widget([
         'dataProvider' => $dataProvider,
         'columns' => [
-            //['class' => 'yii\grid\SerialColumn'],
+            ['class' => 'yii\grid\SerialColumn'],
 
             //'id',
             'username',
-            'attribute',
+            //'attribute',
             'op',
             // 'value:datetime',
             [
-                'label' => 'attribute',
-                'value' => function (object $model, $key, $value, $widget) {
+                'label' => 'Attribute',
+                'value' => function (\davidjeddy\freeradius\models\RadCheck $model, $key, $value, $widget) {
                     if ($model->attribute == 'expiration' && is_numeric($model->value)) {
                         // expiration
                         // Jan 1, 1970, 12:00:00 AM

@@ -20,7 +20,7 @@ class RadCheck extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return '{{%radcheck}}';
+        return '{{%RadCheck}}';
     }
 
     /**
@@ -56,7 +56,7 @@ class RadCheck extends \yii\db\ActiveRecord
      *
      * @return $this
      */
-    public function beforeSave(boolean $insert)
+    public function beforeSave($insert)
     {
         // convert datetime to timestamp for MDL, but only for 'Expiration' attrib.
         if ($this->getAttribute('attribute') == 'Expiration') {
