@@ -10,7 +10,7 @@ class M151114000000FreeRadiusInstall extends Migration
      */
     public function safeUp()
     {
-        echo "m151114_000000_free_radius_install installed.\n";
+        echo "M151114000000FreeRadiusInstall installed.\n";
 
         $connection = Yii::$app->getDb();
         $command = $connection->createCommand("
@@ -34,7 +34,7 @@ class M151114000000FreeRadiusInstall extends Migration
      */
     public function safeDown()
     {
-        echo "m151114_000000_free_radius_install removed.\n";
+        echo "M151114000000FreeRadiusInstall removed.\n";
 
         $connection = Yii::$app->getDb();
         $command = $connection->createCommand("
