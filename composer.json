@@ -1,0 +1,44 @@
+{
+  "authors": [
+    {
+      "name": "David J Eddy",
+      "email": "me@davidjeddy.com",
+      "homepage": "https://github.com/davidjeddy/yii2-freeradius-module",
+      "role": "Maintainer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "davidjeddy\\freeradius\\": "./src"
+    }
+  },
+  "description": "Module to interface with a FreeRADIUS server.",
+  "keywords": [
+    "yii2",
+    "framework",
+    "module",
+    "freeradius"
+  ],
+  "license": "BSD-3-Clause",
+  "name": "davidjeddy/yii2-freeradius-module",
+  "require": {
+    "php": "^7",
+    "yiisoft/yii2": "^2.0.10"
+  },
+  "require-dev": {
+    "codeception/codeception": "^2",
+    "yiisoft/yii2-codeception": "^2",
+    "yiisoft/yii2-debug": "^2",
+    "yiisoft/yii2-faker": "^2"
+  },
+  "suggest": {
+    "asofter/yii2-imperavi-redactor": "^0.0.2",
+    "trntv/yii2-file-kit": "^1",
+    "trntv/yii2-glide": "^1"
+  },
+  "support": {
+    "issues": "https://github.com/davidjeddy/yii2-freeradius-module/issues?state=open",
+    "source": "https://github.com/davidjeddy/yii2-freeradius-module/issues"
+  },
+  "type": "module"
+}
